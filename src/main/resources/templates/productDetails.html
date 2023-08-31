@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Details</title>
+<style>
+.h1
+{
+background-color:rgb(128, 128, 255);
+padding:20px;
+}
+.box
+{
+border:1px solid rgb(128, 128, 255);
+border-width:3px;
+width:500px;
+height:200px;
+padding:20px;
+
+}
+</style>
+</head>
+<body>
+	
+	<div>
+		<h1><u>Product Details</u></h1>
+	</div>
+
+<table border="2" >
+<tr>
+<th>product_id</th>
+<th>product_name</th>
+<th>Product_price</th>
+<th>product_Seller</th>
+<th>Delete</th>
+<th>Updatte</th>
+
+</tr>
+
+<tr th:each="item: ${list}">
+    <td th:text="${item.pid}" />
+    <td th:text="${item.pname}" />
+    <td th:text="${item.pprice}" />
+    <td th:text="${item.seller}" />
+    <td><a th:href="@{'/delete/'+${item.pid}}">Delete</a></td>
+    <td><a th:href="@{/update}">Update</a></td>
+    
+    
+</tr>
+
+</table>
+
+	
+	
+<body style = background-color:rgb(192,192,192); ></style>
+</body>
+</html>
